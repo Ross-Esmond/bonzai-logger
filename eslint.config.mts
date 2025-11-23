@@ -1,32 +1,35 @@
-import js from "@eslint/js";
-import globals from "globals";
-import tseslint from "typescript-eslint";
-import json from "@eslint/json";
-import markdown from "@eslint/markdown";
-import { defineConfig } from "eslint/config";
+import js from '@eslint/js';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
+import json from '@eslint/json';
+import markdown from '@eslint/markdown';
+import { defineConfig } from 'eslint/config';
 
 export default defineConfig([
   {
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
-    ignores: ["node_modules/**", "dist/**"],
+    files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
+    ignores: ['node_modules/**', 'dist/**'],
     plugins: { js },
-    extends: ["js/recommended"],
+    extends: ['js/recommended'],
     languageOptions: { globals: globals.browser },
   },
   {
-    ignores: ["node_modules/**", "dist/**"],
+    ignores: ['node_modules/**', 'dist/**'],
     extends: tseslint.configs.recommended,
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'off',
+    },
   },
   {
-    files: ["src/**/*.json"],
+    files: ['src/**/*.json'],
     plugins: { json },
-    language: "json/json",
-    extends: ["json/recommended"],
+    language: 'json/json',
+    extends: ['json/recommended'],
   },
   {
-    files: ["**/*.md"],
+    files: ['**/*.md'],
     plugins: { markdown },
-    language: "markdown/gfm",
-    extends: ["markdown/recommended"],
+    language: 'markdown/gfm',
+    extends: ['markdown/recommended'],
   },
 ]);

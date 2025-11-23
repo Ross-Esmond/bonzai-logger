@@ -1,5 +1,1 @@
-import "./logger.ts";
-
-export default {
-  hello: "world",
-};
+import './logger.ts';
