@@ -1,0 +1,17 @@
+{
+  "name": "bonzai-logger",
+  "version": "1.0.0",
+  "description": "A tree-based, local-first logger.",
+  "license": "MIT",
+  "author": "Ross Esmond",
+  "type": "commonjs",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "jest",
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "rollup": "^4.53.3"
+  }
+}
