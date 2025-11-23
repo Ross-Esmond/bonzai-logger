@@ -8,11 +8,15 @@ import { defineConfig } from "eslint/config";
 export default defineConfig([
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
+    ignores: ["node_modules/**", "dist/**"],
     plugins: { js },
     extends: ["js/recommended"],
     languageOptions: { globals: globals.browser },
   },
-  tseslint.configs.recommended,
+  {
+    ignores: ["node_modules/**", "dist/**"],
+    extends: tseslint.configs.recommended,
+  },
   {
     files: ["src/**/*.json"],
     plugins: { json },
